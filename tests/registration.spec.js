@@ -14,6 +14,7 @@ async function RegisterPageNavigation(page) {
   
 } 
 
+
 test('User Registration', async ({ page }) => {
 
   const firstName = page.locator('#firstName');
