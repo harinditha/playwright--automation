@@ -1,7 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 
-test.only('Successfull Login', async ({ page }) => {
+test('Successfull Login', async ({ page }) => {
 
     await page.goto('https://rahulshettyacademy.com/client');
     await page.locator('.login-title').isVisible();
