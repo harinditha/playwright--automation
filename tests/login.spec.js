@@ -1,9 +1,13 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+const LoginPage = require('../pageObjects/LoginPage');
+const loginPage = require('../pageObjects/LoginPage');
 
 test('Successfull Login', async ({ page }) => {
 
-    await page.goto('https://rahulshettyacademy.com/client');
+    const loginPage = new LoginPage();
+
+    await loginPage.goToURL();
     await page.locator('.login-title').isVisible();
     expect(page.locator('.login-title')).toBeVisible();
 
