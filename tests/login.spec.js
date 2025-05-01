@@ -1,6 +1,7 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
 const {POManager} = require('../pageObjects/POManager');
+const dataset = JSON.parse(JSON.stringify(require("../utils/TestData.json")));
 
 test('Successfull Login', async ({ page }) => {
 
@@ -9,13 +10,9 @@ test('Successfull Login', async ({ page }) => {
     const LoginPage = pom.getLoginPage();
     const HomePage = pom.getHomePage();
 
-    const email = 'player_wrighter@gmail.com';
-    const password = 'Player123@';
-
-
-    await LoginPage.goto();
+    await LoginPage.goto(dataset.url);
     await LoginPage.successLoginPageNavigation();
-    await LoginPage.UserLogin(email, password);
+    await LoginPage.UserLogin(dataset.email,dataset.password);
     await HomePage.SuccessLoginVerification();
 
 

@@ -10,9 +10,9 @@ class loginPage {
         this.loginTitle = page.locator('.login-title');
     }
 
-    async goto(){
+    async goto(url){
 
-        await this.page.goto('https://rahulshettyacademy.com/client/');
+        await this.page.goto(url);
 
     }
 
