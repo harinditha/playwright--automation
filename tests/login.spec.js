@@ -1,18 +1,18 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const loginPage = require('../pageObjects/loginPage');
-const homePage = require('../pageObjects/homePage');
+const {POManager} = require('../pageObjects/POManager');
 
 test('Successfull Login', async ({ page }) => {
 
-    const LoginPage = new loginPage(page);
-    const HomePage = new homePage(page);
+    const pom = new POManager(page);
 
-    //const url = 'https://rahulshettyacademy.com/client/auth/login';
+    const LoginPage = pom.getLoginPage();
+    const HomePage = pom.getHomePage();
+
     const email = 'player_wrighter@gmail.com';
     const password = 'Player123@';
 
-    //await page.goto(url);
+
     await LoginPage.goto();
     await LoginPage.successLoginPageNavigation();
     await LoginPage.UserLogin(email, password);

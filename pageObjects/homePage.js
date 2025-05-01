@@ -9,7 +9,7 @@ class homePage {
 
     async SuccessLoginVerification(){
 
-        await page.waitForLoadState('domcontentloaded');
+        await this.page.waitForLoadState('domcontentloaded');
         const productName =await this.productCards.nth(0).textContent();
         //const productName = await a.textContent();
         console.log(productName);
@@ -18,4 +18,4 @@ class homePage {
 
 }
 
-module.exports = homePage;
+module.exports = {homePage};

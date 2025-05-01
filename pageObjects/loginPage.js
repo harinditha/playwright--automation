@@ -33,4 +33,4 @@ class loginPage {
 
     }
 }
-module.exports = loginPage;
+module.exports = { loginPage };
